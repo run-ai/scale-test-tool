@@ -1,0 +1,14 @@
+  pvcs:
+    items:
+      pvc-new-0:
+        value:
+          claimName: ""
+          ephemeral: true
+          existingPvc: false
+          path: /path-new
+          readOnly: false
+          readOnlyMany: false
+          readWriteMany: false
+          readWriteOnce: true
+          size: 1Mi
+          storageClass: "openebs-lvmpv"

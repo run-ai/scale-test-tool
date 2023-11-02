@@ -1,0 +1,27 @@
+apiVersion: run.ai/v2alpha1
+kind: InteractiveWorkload
+metadata:
+  annotations:
+    runai-cli-version: 2.11.11
+  creationTimestamp: null
+  labels:
+    PreviousJob: "true"
+  name: JOB_NAME_PLACEHOLDER
+  namespace: runai-PROJECT_PLACEHOLDER
+spec:
+  command:
+    value: sleep infinity
+  gpu:
+    value: "NUM_GPUS"
+  cpu:
+    value: "0.05"
+  memory:
+    value: 1Mi
+  image:
+    value: gcr.io/run-ai-lab/ubuntu:loop
+  imagePullPolicy:
+    value: IfNotPresent
+  name:
+    value: JOB_NAME_PLACEHOLDER
+status: {}
+
