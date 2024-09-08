@@ -75,9 +75,9 @@ def get_workload_key_from_job(resource):
 
 def get_workload_key_from_pod(pod):
     try:
-        job_name = pod.metadata.labels['release'] # training case
+        job_name = pod.metadata.labels['release']  # training case
     except KeyError:
-        job_name = pod.metadata.labels['job-name'] # distributed case
+        job_name = pod.metadata.labels['training.kubeflow.org/job-name']  # distributed case
 
     return job_name, pod.metadata.namespace
 
