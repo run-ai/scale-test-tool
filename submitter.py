@@ -53,7 +53,7 @@ def submit_single_workload(job_name, workload_type, project, num_gpus, num_worke
     else:
         pvc_flag = ''
         if pvc:
-            pvc_flag = ' --new-pvc ephemeral,size=1Mi,accessmode-rwo,path=/path-new,storageclass=openebs-lvmpv'
+            pvc_flag = ' --new-pvc ephemeral,size=1Mi,accessmode-rwo,path=/path-new,storageclass=openebs-lvmpv,claimname=my-pvc'
 
         if workload_type == "training":
            cmd = f"{RUNAI_CLI_PATH} submit {job_name} --project {project} -i gcr.io/run-ai-lab/ubuntu:loop --image-pull-policy IfNotPresent -g {num_gpus} {pvc_flag} --command -- sleep infinity"
